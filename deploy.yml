@@ -1,5 +1,5 @@
 apps:
-  - script: public/bundle.js 
+  - script: build/bundle.js 
     name: 'react-ssr-news' 
     watch: true      
     env:           
@@ -13,7 +13,7 @@ deploy:
     host: 
       - 112.74.49.21  
     port: 22           
-    ref: origin/master     
+    ref: origin/deploy     
     repo: https://github.com/thinkerHope/react-ssr-news.git
     path: /www/react-ssr-news
     ssh_options: StrictHostKeyChecking=no  
