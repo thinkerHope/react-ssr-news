@@ -19,7 +19,7 @@ deploy:
     ssh_options: StrictHostKeyChecking=no 
     # pre-setup:  
     # post-setup: 
-    pre-deploy: git fetch --all   
+    # pre-deploy: git fetch --all   
     # pm2 startOrRestart /file/path/ecosystem.(json | yml) : 通过配置文件启动服务
     # post-deploy: 发布时的钩子，发布时在远程机器上跑的命令（比如npm i）
     post-deploy: 'npm install && pm2 startOrRestart deploy.yml --env production'
