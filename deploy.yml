@@ -1,5 +1,5 @@
 apps:
-  - script: node build/bundle.js 
+  - script: ./build/bundle.js 
     name: 'react-ssr-news' 
     watch: true      
     env:           
