@@ -14,7 +14,7 @@ deploy:
       - 112.74.49.21  
     port: 22           
     ref: origin/master    
-    repo: https://github.com/thinkerHope/react-ssr-news.git
+    repo: git@github.com:thinkerHope/react-ssr-news.git
     path: /www/react-ssr-news
     ssh_options: StrictHostKeyChecking=no 
     # pre-setup:  
