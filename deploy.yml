@@ -1,0 +1,26 @@
+apps:
+  - script: build/bundle.js 
+    name: 'react-ssr-news' 
+    watch: true      
+    env:           
+      NODE_ENV: development
+    env_production:
+      NODE_ENV: production
+deploy:
+  production:     
+    user: root     
+    # key: C:/key/SSH-ubuntu.pem
+    host: 
+      - 112.74.49.21  
+    port: 22           
+    ref: origin/master    
+    repo: https://github.com/thinkerHope/react-ssr-news.git
+    path: /www/react-ssr-news
+    ssh_options: StrictHostKeyChecking=no 
+    # pre-setup:  
+    # post-setup: 
+    pre-deploy: git fetch --all   
+    # pm2 startOrRestart /file/path/ecosystem.(json | yml) : 通过配置文件启动服务
+    post-deploy: 'cd build && npm install --ignore-scripts && pm2 startOrRestart deploy.yml --env production'
+    env: 
+      NODE_ENV : production
